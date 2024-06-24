@@ -14,9 +14,16 @@ import zipfile
 
 anty_api_key = '86fab685c1b83c34e38c1f2903d5a62e'
 proxies = [
-    '46.161.46.142:9040:bYf3RW:68ubed',
-    '188.119.126.96:9862:uSuwW3:Cb1Cme',
-    '188.119.125.166:9476:uSuwW3:Cb1Cme'
+    '194.67.223.197:9407:L47aAn:BtgXEq',
+    '194.67.220.28:9824:L47aAn:BtgXEq',
+    '194.67.221.220:9958:L47aAn:BtgXEq',
+    '194.67.221.234:9085:L47aAn:BtgXEq',
+    '194.67.221.189:9172:L47aAn:BtgXEq',
+    '194.67.222.223:9543:L47aAn:BtgXEq',
+    '194.67.221.39:9541:L47aAn:BtgXEq',
+    '194.67.219.148:9353:L47aAn:BtgXEq',
+    '194.67.219.127:9926:L47aAn:BtgXEq',
+    '194.67.221.31:9464:L47aAn:BtgXEq'
 ]
 
 
@@ -136,7 +143,7 @@ def create_account():
                 'setOptions',
                 {'options': {'antiCaptchaApiKey': anty_api_key}}
             )
-    driver.get('https://war.day/?ref=4Khy6r')
+    driver.get('https://war.day/?ref=3nnXgx')
     sleep(2)
     browser_click_elements(driver, 11, value="//*[@class='nav__item']")
     sleep(2)
@@ -161,10 +168,14 @@ def create_account():
 
     browser_click_element(driver, value="//*[@class='btn btn-lg mt-6 align-self-start p-0']")
 
-    sleep(3)
+    sleep(10)
 
     driver.close()
 
 
 def start():
-    create_account()
+    while True:
+        try:
+            create_account()
+        except:
+            pass
